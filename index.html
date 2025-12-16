@@ -313,20 +313,23 @@
       // --- GALLERY DATA & LOGIC ---
       const galleryData = {
         'mini-series': [
-          { title: 'Animals of the Savanna', img: 'ao1.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Countryside', img: 'ao2.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Zoo', img: 'ao3.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Mountain', img: 'ao4.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Ocean', img: 'ao5.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Arctic', img: 'ao6.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Outback', img: 'ao7.jpg', url: 'https://www.instagram.com/unxinstudio' },
-          { title: 'Animals of the Forest', img: 'ao8.jpg', url: 'https://www.instagram.com/unxinstudio' }
+          { color: '#ffff', title: 'Animals of the Savanna', img: 'ao1.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQtfC3QD56a/' },
+          { color: '#ffff', title: 'Animals of the Countryside', img: 'ao2.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQv_BNED_D5/' },
+          { color: '#ffff', title: 'Animals of the Zoo', img: 'ao3.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ3yO-LjwOF/' },
+          { color: '#ffff', title: 'Animals of the Mountain', img: 'ao4.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ6ydTBD3D6/' },
+          { color: '#ffff', title: 'Animals of the Ocean', img: 'ao5.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ86009D7YX/' },
+          { color: '#ffff', title: 'Animals of the Arctic', img: 'ao6.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRCI3myj-Uz/' },
+          { color: '#ffff', title: 'Animals of the Outback', img: 'ao7.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRJxha2D5vB/' },
+          { color: '#ffff', title: 'Animals of the Forest', img: 'ao8.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRZLnAaj_0U/' }
         ],
         'short-film': [
           { title: 'Neon Shadows', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Short+Film+01', url: 'https://www.instagram.com/unxinstudio' },
           { title: 'Memory Lane', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Short+Film+02', url: 'https://www.instagram.com/unxinstudio' }
         ],
         'music-video': [
+          { title: 'Echoes of Tomorrow', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+01', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Rhythm in Code', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+02', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Digital Heartbeat', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+03', url: 'https://www.instagram.com/unxinstudio' },
           { title: 'Echoes of Tomorrow', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+01', url: 'https://www.instagram.com/unxinstudio' },
           { title: 'Rhythm in Code', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+02', url: 'https://www.instagram.com/unxinstudio' },
           { title: 'Digital Heartbeat', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+03', url: 'https://www.instagram.com/unxinstudio' }
@@ -362,7 +365,7 @@
                 <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-studio-blue/20 group-hover:bg-transparent transition-all duration-300"></div>
               </div>
-              <div class="w-full p-3 absolute bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent">
+              <div class="w-full p-3 absolute bottom-0 left-0 bg-gradient-to-t from-${item.color}/80 to-transparent">
                 <h3 class="text-wrap w-35 font-mono text-xs md:text-sm font-bold uppercase tracking-wider text-white truncate">${item.title}</h3>
               </div>
             `;
