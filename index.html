@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNXIN STUDIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Alfa Slab One"', 'cursive'],
+              heading: ['Outfit', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              mono: ['"Space Mono"', 'monospace'],
+            },
+            colors: {
+              'studio-blue': '#0a1568', // Deep Vibrant Blue
+              'studio-accent': '#ffffff',
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0a1568;
+        color: #e5e5e5;
+      }
+      /* Custom utility for hiding scrollbar in horizontal scroll if needed */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      /* Gallery Tab Active State */
+      .gallery-tab.active {
+        background-color: white !important;
+        color: #0a1568 !important;
+      }
+
+      /* Modal Styles */
+      .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="min-h-screen bg-studio-blue text-white selection:bg-white selection:text-studio-blue pb-24 font-mono overflow-x-hidden relative">
+    
+    <!-- Background Image Area -->
+    <div class="absolute top-0 left-0 w-full z-0 pointer-events-none">
+      <img 
+        src="/bgbg.jpeg" 
+        alt="Background" 
+        class="w-full h-auto opacity-70"
+      />
+      <!-- Gradient Fade to blend with blue background -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a1568]/20 via-[#0a1568]/60 to-[#0a1568]"></div>
+    </div>
+
+    <!-- Heavy Noise Texture -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.15] z-0" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E')"></div>
+    
+    <!-- Subtle Glow at top -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-white/5 blur-[100px] pointer-events-none rounded-full z-0"></div>
+
+    <!-- Main Content Container -->
+    <div class="max-w-3xl mx-auto px-6 py-20 relative z-10">
+      
+      <!-- Profile Header -->
+      <header class="flex flex-col items-center text-center mb-16 animate-fade-in">
+        <div class="w-24 h-24 md:w-32 md:h-32 mb-6"></div>
+        <h1 class="flex flex-col items-center font-display text-white mb-6 drop-shadow-lg leading-none tracking-wide">
+          <span class="text-7xl md:text-9xl">UNXIN</span>
+          <span class="text-5xl md:text-7xl">STUDIO</span>
+        </h1>
+        <div class="px-4 py-1 border border-white/30 rounded-full bg-black/20 backdrop-blur-sm">
+          <p class="font-mono font-medium text-white/80 tracking-widest text-xs uppercase">
+            The Future of Visual Storytelling!
+          </p>
+        </div>
+      </header>
+
+      <!-- Section: About Us -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          About Us
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <div class="bg-white/5 border border-white/20 p-8 rounded-2xl backdrop-blur-sm text-center shadow-2xl">
+        <p class="text-white/90 leading-relaxed font-mono text-sm md:text-base tracking-wide">
+        UNXIN STUDIO is an AI-driven audiovisual studio founded by Yunan Helmy, turning imagination and emotion into cinematic visuals.
+        </br></br>
+        Focused on short films and music videos, we use AI as a creative tool to express mood, feeling, and story — not just visuals. Every project is about capturing emotion and translating it into moving images.
+        </br></br>
+        Built on constant experimentation and adaptation, UNXIN STUDIO grows alongside fast-moving technology, pushing creative limits and aiming for global recognition through international competitions and collaborations.
+        </p>
+      </div>
+
+      <!-- Section: Find Us -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          Find Us
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Social Links generated via HTML -->
+        <a href="https://www.instagram.com/unxinstudio?igsh=M2lpOGp1azBucHdj" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">Instagram</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+        
+        <a href="https://x.com/unxinstudio?t=1aLJ644KeoA4wLm3tsM-3w&s=09" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">X (Twitter)</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@unxinstudio" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">YouTube</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+
+        <a href="https://www.threads.com/@unxinstudio" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">Threads</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@unxinstudio?_r=1&_t=ZS-92F68cfFoam" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">Tiktok</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/yunanhelmyart?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="block w-full p-4 border border-white rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group relative overflow-hidden">
+          <div class="flex items-center justify-center relative z-10">
+            <span class="font-mono font-bold text-sm md:text-base uppercase tracking-widest text-center">LinkedIn</span>
+            <span class="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Section: Level Up -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          Level Up
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <!-- Dynamic Level Up Grid -->
+      <div id="level-up-grid" class="grid grid-cols-1 gap-4">
+        <!-- Content injected via JS -->
+      </div>
+
+      <!-- Section: Creative Partner -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          Creative Partner
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">WAVESPEED AI</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">POLLO AI</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">HIGGSFIELD</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">OPENART</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">GMI CLOUD</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">IMAGINEART</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">CAPCUT ID</span>
+        <span class="px-4 py-2 text-xs md:text-sm font-bold font-mono text-white border border-white rounded-lg uppercase tracking-wider hover:bg-white hover:text-studio-blue transition-colors cursor-default">SJINN AI</span>
+      </div>
+
+      <!-- Section: Contact -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          Contact
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <a 
+        href="mailto:yunanhelmyart@gmail.com"
+        class="block text-center font-mono text-lg md:text-xl text-white/90 hover:text-white transition-colors duration-300 lowercase tracking-wider mb-8"
+      >
+        yunanhelmyart@gmail.com
+      </a>
+
+      <!-- Section: Gallery -->
+      <div class="flex items-center gap-4 mb-8 mt-16 animate-fade-in">
+        <div class="h-px bg-white/30 flex-1"></div>
+        <h2 class="font-mono text-lg md:text-xl font-bold text-white uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-studio-blue/50 backdrop-blur-md">
+          Gallery
+        </h2>
+        <div class="h-px bg-white/30 flex-1"></div>
+      </div>
+
+      <!-- Gallery Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="gallery-tabs">
+        <button onclick="changeGallery('mini-series')" class="gallery-tab active px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="mini-series">Series</button>
+        <button onclick="changeGallery('short-film')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="short-film">Short Film</button>
+        <button onclick="changeGallery('music-video')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="music-video">MV</button>
+        <button onclick="changeGallery('showcase')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="showcase">Showcase</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-2 gap-4 animate-fade-in">
+        <!-- Content will be injected via JS -->
+      </div>
+
+
+      <!-- Footer -->
+      <footer class="mt-32 text-center pt-8 border-t border-white/10 pb-8">
+        <p class="font-mono text-[10px] text-white/50 uppercase tracking-[0.2em]">
+          © <span id="year"></span> UNXIN STUDIO. All rights reserved.
+        </p>
+      </footer>
+
+    </div>
+
+    <script>
+      // Simple Javascript for Dynamic Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // --- LEVEL UP DATA ---
+      const levelUpData = [
+        { 
+          title: 'Most Viral - OpenArt x Minimax Story Weeks - Reality vs Dream', 
+          url: 'https://www.instagram.com/reel/DOJQk-Rj9iz/?igsh=N2kyZHM0OTh0azc5',
+          thumb: '1.jpg'
+        },
+        { 
+          title: '10th Place - Aico Community Challenge - Pahlawanku', 
+          url: 'https://www.instagram.com/p/DPL0_9bE8Rk/?img_index=2&igsh=MTcwZzA4Y29samlqcw==',
+          thumb: 'https://placehold.co/320x180/0a1568/ffffff?text=10th+Place'
+        },
+        { 
+          title: 'Best Hip Hop Music Video - OpenArt Music Video Awards - From Needing to Giving', 
+          url: 'https://www.instagram.com/reel/DR-A2PzEqSl/?igsh=MXV4aTB3N2h2bHI5dQ==',
+          thumb: 'https://placehold.co/320x180/0a1568/ffffff?text=Music+Video'
+        },
+        { 
+          title: '2nd Place - DNArt AI.NIMATION COMPETITION - Petualanganku', 
+          url: 'https://www.instagram.com/reel/DRdSvcMksmF/?igsh=MW5qdzBybzVtd2Jtbg==',
+          thumb: 'https://placehold.co/320x180/0a1568/ffffff?text=2nd+Place'
+        }
+      ];
+
+      function renderLevelUp() {
+        const container = document.getElementById('level-up-grid');
+        
+        container.innerHTML = levelUpData.map(item => `
+          <div class="w-full">
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="block h-full">
+              <div class="relative p-3 border border-white/20 bg-white/5 rounded-xl hover:bg-white hover:text-studio-blue transition-all duration-300 group cursor-pointer h-full flex flex-row items-center gap-4">
+                <div class="w-24 md:w-32 aspect-video shrink-0 overflow-hidden rounded-md border border-white/10">
+                   <img src="${item.thumb}" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="flex-1 text-left">
+                  <h3 class="font-mono text-xs md:text-sm font-medium uppercase tracking-wide">
+                    ${item.title}
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        `).join('');
+      }
+
+      // --- GALLERY DATA & LOGIC ---
+      const galleryData = {
+        'mini-series': [
+          { title: 'The Awakening - Ep 1', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Series+01', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'The Awakening - Ep 2', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Series+02', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Cyber Pulse - Pilot', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Series+03', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Cyber Pulse - Finale', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Series+04', url: 'https://www.instagram.com/unxinstudio' }
+        ],
+        'short-film': [
+          { title: 'Neon Shadows', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Short+Film+01', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Memory Lane', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Short+Film+02', url: 'https://www.instagram.com/unxinstudio' }
+        ],
+        'music-video': [
+          { title: 'Echoes of Tomorrow', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+01', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Rhythm in Code', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+02', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Digital Heartbeat', img: 'https://placehold.co/600x338/0a1568/ffffff?text=MV+03', url: 'https://www.instagram.com/unxinstudio' }
+        ],
+        'showcase': [
+          { title: 'Environment Design', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Showcase+01', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Character Concepts', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Showcase+02', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'VFX Breakdown', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Showcase+03', url: 'https://www.instagram.com/unxinstudio' },
+          { title: 'Style Transfer Test', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Showcase+04', url: 'https://www.instagram.com/unxinstudio' }
+        ]
+      };
+
+      function renderGallery(category) {
+        const grid = document.getElementById('gallery-grid');
+        grid.innerHTML = ''; // Clear current content
+        
+        const items = galleryData[category];
+        
+        if (items) {
+          items.forEach(item => {
+            const card = document.createElement('a');
+            card.href = item.url || '#';
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.className = 'block group relative border border-white/20 rounded-lg overflow-hidden bg-white/5 hover:border-white transition-all duration-300 cursor-pointer';
+            
+            card.innerHTML = `
+              <div class="aspect-video w-full overflow-hidden relative">
+                <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                <div class="absolute inset-0 bg-studio-blue/20 group-hover:bg-transparent transition-all duration-300"></div>
+              </div>
+              <div class="p-3 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="font-mono text-xs md:text-sm font-bold uppercase tracking-wider text-white truncate">${item.title}</h3>
+              </div>
+            `;
+            
+            grid.appendChild(card);
+          });
+        }
+      }
+
+      function changeGallery(category) {
+        // Update Tabs
+        document.querySelectorAll('.gallery-tab').forEach(btn => {
+          if(btn.dataset.category === category) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        // Render Content
+        renderGallery(category);
+      }
+
+      // Initial Render
+      renderLevelUp();
+      renderGallery('mini-series');
+
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
