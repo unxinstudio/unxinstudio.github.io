@@ -239,7 +239,9 @@
 
       <!-- Gallery Tabs -->
       <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="gallery-tabs">
-        <button onclick="changeGallery('mini-series')" class="gallery-tab active px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="mini-series">Series</button>
+        <button onclick="changeGallery('short-film')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="short-film">Short Film</button>
+        <button onclick="changeGallery('mini-series-oct')" class="gallery-tab active px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="mini-series">Series</button>
+        <button onclick="changeGallery('mini-series-nov')" class="gallery-tab active px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="mini-series">Series</button>
         <button onclick="changeGallery('short-film')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="short-film">Short Film</button>
         <button onclick="changeGallery('music-video')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="music-video">MV</button>
         <button onclick="changeGallery('showcase')" class="gallery-tab px-4 py-2 text-xs md:text-sm font-bold font-mono border border-white rounded-lg uppercase tracking-wider hover:bg-white/10 transition-colors" data-category="showcase">Showcase</button>
@@ -312,15 +314,25 @@
 
       // --- GALLERY DATA & LOGIC ---
       const galleryData = {
-        'mini-series': [
-          { color: 'white', title: 'Animals of the Savanna', img: 'ao1.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQtfC3QD56a/' },
-          { color: 'white', title: 'Animals of the Countryside', img: 'ao2.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQv_BNED_D5/' },
-          { color: 'white', title: 'Animals of the Zoo', img: 'ao3.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ3yO-LjwOF/' },
-          { color: 'white', title: 'Animals of the Mountain', img: 'ao4.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ6ydTBD3D6/' },
-          { color: 'white', title: 'Animals of the Ocean', img: 'ao5.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ86009D7YX/' },
-          { color: 'white', title: 'Animals of the Arctic', img: 'ao6.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRCI3myj-Uz/' },
-          { color: 'white', title: 'Animals of the Outback', img: 'ao7.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRJxha2D5vB/' },
-          { color: 'white', title: 'Animals of the Forest', img: 'ao8.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRZLnAaj_0U/' }
+        'mini-series-oct': [
+          { title: 'Normal Day at School', img: 'n1.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQtfC3QD56a/' },
+          { title: 'Normal Day at Garden', img: 'n2.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQv_BNED_D5/' },
+          { title: 'Normal Day at Countryside', img: 'n3.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ3yO-LjwOF/' },
+          { title: 'Normal Day at F1 Circuit', img: 'n4.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ6ydTBD3D6/' },
+          { title: 'Normal Day at Chicken Farm', img: 'n5.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ86009D7YX/' },
+          { title: 'Normal Day at Haunted House', img: 'n6.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRCI3myj-Uz/' },
+          { title: 'Normal Day at Train Station', img: 'n7.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRJxha2D5vB/' },
+          { title: 'Normal Day at Bird Sanctuary', img: 'n8.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRZLnAaj_0U/' }
+        ],                  
+        'mini-series-nov': [
+          { title: 'Animals of the Savanna', img: 'ao1.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQtfC3QD56a/' },
+          { title: 'Animals of the Countryside', img: 'ao2.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQv_BNED_D5/' },
+          { title: 'Animals of the Zoo', img: 'ao3.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ3yO-LjwOF/' },
+          { title: 'Animals of the Mountain', img: 'ao4.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ6ydTBD3D6/' },
+          { title: 'Animals of the Ocean', img: 'ao5.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DQ86009D7YX/' },
+          { title: 'Animals of the Arctic', img: 'ao6.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRCI3myj-Uz/' },
+          { title: 'Animals of the Outback', img: 'ao7.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRJxha2D5vB/' },
+          { title: 'Animals of the Forest', img: 'ao8.jpg', url: 'https://www.instagram.com/unxinstudio/reel/DRZLnAaj_0U/' }
         ],
         'short-film': [
           { title: 'Neon Shadows', img: 'https://placehold.co/600x338/0a1568/ffffff?text=Short+Film+01', url: 'https://www.instagram.com/unxinstudio' },
@@ -365,7 +377,7 @@
                 <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                 <div class="absolute inset-0 bg-studio-blue/20 group-hover:bg-transparent transition-all duration-300"></div>
               </div>
-              <div class="w-full p-3 absolute bottom-0 left-0 bg-gradient-to-t from-${item.color}/80 to-transparent">
+              <div class="w-full p-3 absolute bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent">
                 <h3 class="text-wrap w-35 font-mono text-xs md:text-sm font-bold uppercase tracking-wider text-white truncate">${item.title}</h3>
               </div>
             `;
