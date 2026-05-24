@@ -560,7 +560,7 @@
     const img = row.thumbnail
       ? `<img src="${row.thumbnail}" alt="${row.judul}" onerror="this.style.display='none'">`
       : '';
-    const meta = `<div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div>`;
+    const meta = `<div class="meta"><h3>${row.judul || 'TITLE'}</h3><div class="cat">${row.deskripsi || 'Description'}</div></div>`;
     const thumb = `<div class="thumb">${img}${meta}</div>`;
     const inner = row.link
       ? `<a href="${row.link}" target="_blank" rel="noopener">${thumb}</a>`
