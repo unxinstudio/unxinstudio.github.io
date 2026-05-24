@@ -344,8 +344,8 @@
           <img src="" alt="Most Viral" onerror="this.style.display='none'">
           <div class="ach-meta">
             <div class="ach-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eef2fb" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 010-5H6m12 5h1.5a2.5 2.5 0 000-5H18M6 4h12v5a6 6 0 01-12 0V4zM12 15v3m-3 3h6"/></svg></div>
-            <div class="ach-rank">Most Viral</div>
-            <div class="ach-desc">OpenArt Story Weeks — Reality vs Dream</div>
+            <div class="ach-rank">TITLE</div>
+            <div class="ach-desc">Description</div>
             <div class="ach-yr">2024</div>
           </div>
         </div>
@@ -355,8 +355,8 @@
           <img src="" alt="2nd Place" onerror="this.style.display='none'">
           <div class="ach-meta">
             <div class="ach-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eef2fb" stroke-width="1.5"><circle cx="12" cy="14" r="6"/><path d="M9 8L7 2h10l-2 6"/></svg></div>
-            <div class="ach-rank">2nd Place</div>
-            <div class="ach-desc">DNART AI Animation Competition — Petualanganku</div>
+            <div class="ach-rank">TITLE</div>
+            <div class="ach-desc">Description</div>
             <div class="ach-yr">2024</div>
           </div>
         </div>
@@ -366,8 +366,8 @@
           <img src="" alt="Best Hip Hop Video" onerror="this.style.display='none'">
           <div class="ach-meta">
             <div class="ach-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eef2fb" stroke-width="1.5"><path d="M3 8l4 3 5-6 5 6 4-3v9H3z"/></svg></div>
-            <div class="ach-rank">Best Hip Hop Video</div>
-            <div class="ach-desc">OpenArt Music Video Awards — From Needing To Giving</div>
+            <div class="ach-rank">TITLE</div>
+            <div class="ach-desc">Description</div>
             <div class="ach-yr">2024</div>
           </div>
         </div>
@@ -377,8 +377,8 @@
           <img src="" alt="10th Place" onerror="this.style.display='none'">
           <div class="ach-meta">
             <div class="ach-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eef2fb" stroke-width="1.5"><path d="M3 8l4 3 5-6 5 6 4-3v9H3z"/></svg></div>
-            <div class="ach-rank">10th Place</div>
-            <div class="ach-desc">AICO Community Challenge — Pahlawanku</div>
+            <div class="ach-rank">TITLE</div>
+            <div class="ach-desc">Description</div>
             <div class="ach-yr">2024</div>
           </div>
         </div>
@@ -628,7 +628,7 @@
 
     grid.innerHTML = achData.map((r, i) => {
       const icon = icons[i % icons.length];
-      const img = r.thumbnail ? `<img src="${r.thumbnail}" alt="${r.judul}" onerror="this.style.display='none'">` : '';
+      const img = r.thumbnail ? `<img src="${r.thumbnail}" alt="${r.judul || 'TITLE'}" onerror="this.style.display='none'">` : '';
       const href = r.link || 'https://www.instagram.com/unxinstudio/';
       return `
       <a class="ach" href="${href}" target="_blank" rel="noopener">
@@ -636,8 +636,8 @@
           ${img}
           <div class="ach-meta">
             <div class="ach-ic">${icon}</div>
-            <div class="ach-rank">${r.judul}</div>
-            <div class="ach-desc">${r.deskripsi || ''}</div>
+            <div class="ach-rank">TITLE</div>
+            <div class="ach-desc">Description</div>
             <div class="ach-yr">${r.tahun || ''}</div>
           </div>
         </div>
