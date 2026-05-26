@@ -34,7 +34,7 @@
   body::before{
     content:"";
     position:absolute;inset:0;z-index:-2;
-    background-image:url("assets/header/background.png");
+    background-image:url("assets/header/background.jpg");
     background-size:100% auto;
     background-position:center top;
     background-repeat:no-repeat;
@@ -193,6 +193,20 @@
     .about-grid{grid-template-columns:1fr;gap:40px}
     .works{grid-template-columns:repeat(2,1fr)}
     .cta{padding:34px 24px}
+
+    /* 1. Hero: beri ruang lebih di atas supaya tidak mepet */
+    .hero-bg{aspect-ratio:auto;min-height:100vw}
+    .hero-overlay{padding:80px 20px 40px}
+
+    /* 2. Creative Partner: jangan bergerak, tampilkan grid statis */
+    .partner-track{animation:none;transform:none !important;flex-wrap:wrap;width:100%;justify-content:center;gap:10px}
+    .partner-track-wrap::before,.partner-track-wrap::after{display:none}
+    /* Sembunyikan duplikat partner (item ke-15 dst) */
+    .partner-item:nth-child(n+15){display:none}
+
+    /* 3. Selected Works: sembunyikan deskripsi, tampilkan judul saja */
+    .work .meta .cat{display:none}
+    .ach-meta .ach-desc{display:none}
   }
   /* SERIES ACCORDION */
   .series-accordion{width:100%;display:flex;flex-direction:column;gap:2px;grid-column:1/-1}
