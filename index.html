@@ -221,16 +221,6 @@
     .ach-meta .ach-desc{display:none}
   }
   /* SERIES ACCORDION */
-  .series-accordion{width:100%;display:flex;flex-direction:column;gap:2px;grid-column:1/-1}
-  .series-item{border:1px solid var(--line);overflow:hidden;transition:border-color .3s}
-  .series-item.open{border-color:var(--accent)}
-  .series-title{display:flex;justify-content:space-between;align-items:center;
-    padding:18px 24px;cursor:pointer;font-family:var(--mono);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--white);transition:background .25s;user-select:none}
-  .series-title:hover{background:rgba(59,111,255,.08)}
-  .series-item.open .series-title{background:rgba(59,111,255,.1)}
-  .series-arrow{font-size:16px;transition:transform .35s cubic-bezier(.16,1,.3,1);color:var(--muted)}
-  .series-item.open .series-arrow{transform:rotate(180deg);color:var(--accent)}
   .series-episodes{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1),padding .3s}
   .series-item.open .series-episodes{max-height:1200px;padding:16px 0 24px}
   .series-episodes .works{padding:0 24px}
@@ -317,13 +307,12 @@
     </div>
     <div class="filters" style="justify-content:center">
       <span class="filter active" data-filter="short-film">Short Film</span>
-      <span class="filter" data-filter="series">Series</span>
       <span class="filter" data-filter="music-video">Music Video</span>
       <span class="filter" data-filter="prompt">Prompt</span>
       <span class="filter" data-filter="spec-ad">Spec Ad</span>
     </div>
 
-    <!-- Grid kartu biasa (non-series) -->
+    <!-- Grid kartu works -->
     <div class="works">
       <div class="work" data-cat="short-film"><a href="https://www.instagram.com/reel/DVBkfXGiM9_/" target="_blank" rel="noopener"><div class="thumb"><img src="" alt="Neon Shadows" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></a></div>
       <div class="work" data-cat="short-film"><div class="thumb"><img src="" alt="Lost Signal" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
@@ -342,70 +331,8 @@
       <div class="work" data-cat="spec-ad"><div class="thumb"><img src="" alt="Pure Sense" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
       <div class="work" data-cat="spec-ad"><div class="thumb"><img src="" alt="Horizon Tech" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
     </div>
-
-    <!-- Accordion series: lebar penuh, di luar grid -->
-    <!-- Tambah .series-item untuk tiap judul series baru -->
-    <div class="series-accordion" data-cat="series" style="display:none">
-
-        <div class="series-item">
-          <div class="series-title" onclick="toggleSeries(this)">
-            <span>Echoes Of Human</span>
-            <span class="series-arrow">↓</span>
-          </div>
-          <div class="series-episodes">
-            <div class="works">
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 1" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 2" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 3" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="series-item">
-          <div class="series-title" onclick="toggleSeries(this)">
-            <span>Parallel Lives</span>
-            <span class="series-arrow">↓</span>
-          </div>
-          <div class="series-episodes">
-            <div class="works">
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 1" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 2" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="series-item">
-          <div class="series-title" onclick="toggleSeries(this)">
-            <span>The Archive</span>
-            <span class="series-arrow">↓</span>
-          </div>
-          <div class="series-episodes">
-            <div class="works">
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 1" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 2" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 3" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 4" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="series-item">
-          <div class="series-title" onclick="toggleSeries(this)">
-            <span>Nightfall Chapters</span>
-            <span class="series-arrow">↓</span>
-          </div>
-          <div class="series-episodes">
-            <div class="works">
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 1" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 2" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 3" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 4" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-              <div class="work series-ep"><div class="thumb"><img src="" alt="Episode 5" onerror="this.style.display='none'"><div class="meta"><h3>TITLE</h3><div class="cat">Description</div></div></div></div>
-            </div>
-          </div>
-        </div>
-
     </div>
+
   </div>
 </section>
 
@@ -499,8 +426,6 @@
 <script>
   // ============================================================
   // KONFIGURASI Google Sheets
-  // URL ini sudah disesuaikan dengan sheet yang kamu publish
-  // Kalau ganti sheet baru, ubah bagian PUBLISHED_ID di bawah
   // ============================================================
   const PUBLISHED_ID = '2PACX-1vT8k5WBHWxvOHp6xjEy-XtytZeZLO3n0LaWHb0Z-tT1aXL0u5GRSL4Ek7WBXfD3mgnRneoD2QIgD7Cl';
   const SHEET_URL = `https://docs.google.com/spreadsheets/d/e/${PUBLISHED_ID}/pub?output=csv`;
@@ -514,30 +439,26 @@
   document.querySelectorAll('section').forEach(s => { s.classList.add('reveal'); io.observe(s); });
 
   // ============================================================
-  // FETCH & PARSE DATA DARI GOOGLE SHEETS (format CSV)
+  // FETCH & PARSE CSV DARI GOOGLE SHEETS
   // ============================================================
   async function fetchSheet() {
     try {
       const res = await fetch(SHEET_URL);
       const text = await res.text();
-
-      // Parse CSV sederhana (handle koma dalam quotes)
       const lines = text.trim().split('\n');
       const headers = parseCSVRow(lines[0]).map(h => h.trim().toLowerCase());
-
       return lines.slice(1).map(line => {
         const vals = parseCSVRow(line);
         const obj = {};
         headers.forEach((h, i) => { obj[h] = (vals[i] || '').trim(); });
         return obj;
-      }).filter(r => r.kategori); // skip baris kosong
+      }).filter(r => r.kategori);
     } catch(e) {
-      console.error('Gagal mengambil data dari Google Sheets:', e);
+      console.error('Gagal fetch Google Sheets:', e);
       return null;
     }
   }
 
-  // Parser CSV yang handle nilai dalam tanda kutip
   function parseCSVRow(row) {
     const result = [];
     let cur = '', inQuote = false;
@@ -548,9 +469,7 @@
         else inQuote = !inQuote;
       } else if (ch === ',' && !inQuote) {
         result.push(cur); cur = '';
-      } else {
-        cur += ch;
-      }
+      } else { cur += ch; }
     }
     result.push(cur);
     return result;
@@ -558,67 +477,50 @@
 
   // ============================================================
   // RENDER SELECTED WORKS
-  // Kolom sheet: kategori, sub_kategori, judul, series_nama,
-  //              episode, thumbnail, link, tahun
   // ============================================================
-  function makeWorkCard(row, isSeries = false) {
+  function makeWorkCard(row) {
     const img = row.thumbnail
       ? `<img src="${row.thumbnail}" alt="${row.judul}" onerror="this.style.display='none'">`
       : '';
-    const meta = `<div class="meta"><h3>${row.judul || 'TITLE'}</h3><div class="cat">${row.deskripsi || 'Description'}</div></div>`;
-    const thumb = `<div class="thumb">${img}${meta}</div>`;
+    const thumb = `<div class="thumb">${img}</div>`;
     const inner = row.link
       ? `<a href="${row.link}" target="_blank" rel="noopener">${thumb}</a>`
       : thumb;
-    const cls = isSeries ? 'work series-ep' : 'work';
-    const dataCat = isSeries ? '' : `data-cat="${row.sub_kategori}"`;
-    return `<div class="${cls}" ${dataCat}>${inner}</div>`;
+    return `<div class="work" data-cat="${row.sub_kategori}">${inner}</div>`;
   }
 
   function renderWorks(data) {
-    const worksData = data.filter(r => r.kategori === 'works');
-
-    // --- Kartu biasa (non-series) ---
-    const nonSeries = worksData.filter(r => r.sub_kategori !== 'series');
-    const worksGrid = document.querySelector('.works');
-    if (worksGrid) {
-      worksGrid.innerHTML = nonSeries.map(r => makeWorkCard(r)).join('\n');
-      // Inisialisasi tampilan filter
-      worksGrid.querySelectorAll('.work').forEach(w => {
-        w.style.display = (w.dataset.cat === 'short-film') ? '' : 'none';
+    const worksData = data.filter(r => r.kategori === 'works' && r.sub_kategori !== 'series');
+    const grid = document.querySelector('.works');
+    if (grid && worksData.length > 0) {
+      grid.innerHTML = worksData.map(r => makeWorkCard(r)).join('\n');
+      // Tampilkan hanya kategori aktif
+      const activeCat = document.querySelector('.filter.active')?.dataset.filter || 'short-film';
+      grid.querySelectorAll('.work').forEach(w => {
+        w.style.display = (w.dataset.cat === activeCat) ? '' : 'none';
       });
-    }
-
-    // --- Accordion Series ---
-    const seriesData = worksData.filter(r => r.sub_kategori === 'series');
-    // Kelompokkan per series_nama
-    const seriesMap = {};
-    seriesData.forEach(r => {
-      const key = r.series_nama || 'Untitled Series';
-      if (!seriesMap[key]) seriesMap[key] = [];
-      seriesMap[key].push(r);
-    });
-
-    const accordion = document.querySelector('.series-accordion');
-    if (accordion && Object.keys(seriesMap).length > 0) {
-      accordion.innerHTML = Object.entries(seriesMap).map(([name, eps]) => `
-        <div class="series-item">
-          <div class="series-title" onclick="toggleSeries(this)">
-            <span>${name}</span>
-            <span class="series-arrow">↓</span>
-          </div>
-          <div class="series-episodes">
-            <div class="works">
-              ${eps.map(ep => makeWorkCard(ep, true)).join('\n')}
-            </div>
-          </div>
-        </div>`).join('\n');
     }
   }
 
   // ============================================================
+  // FILTER WORKS
+  // ============================================================
+  document.querySelectorAll('.filter').forEach(f => f.addEventListener('click', () => {
+    document.querySelector('.filter.active')?.classList.remove('active');
+    f.classList.add('active');
+    const cat = f.dataset.filter;
+    document.querySelectorAll('.work').forEach(w => {
+      w.style.display = (w.dataset.cat === cat) ? '' : 'none';
+    });
+  }));
+
+  // Inisialisasi: tampilkan short-film
+  document.querySelectorAll('.work').forEach(w => {
+    w.style.display = (w.dataset.cat === 'short-film') ? '' : 'none';
+  });
+
+  // ============================================================
   // RENDER ACHIEVEMENTS
-  // Kolom sheet: kategori, judul, deskripsi, tahun, thumbnail, link
   // ============================================================
   function renderAchievements(data) {
     const achData = data.filter(r => r.kategori === 'achievements');
@@ -632,9 +534,8 @@
       </div>`).join('\n');
   }
 
-    // ============================================================
+  // ============================================================
   // RENDER CREATIVE PARTNERS
-  // Kolom sheet: kategori, judul, link (opsional)
   // ============================================================
   function renderPartners(data) {
     const partnerData = data.filter(r => r.kategori === 'partners');
@@ -647,39 +548,11 @@
     ).join('\n');
   }
 
-  
   // ============================================================
-  // FILTER WORKS
-  // ============================================================
-  document.querySelectorAll('.filter').forEach(f => f.addEventListener('click', () => {
-    document.querySelector('.filter.active').classList.remove('active');
-    f.classList.add('active');
-    const cat = f.dataset.filter;
-    document.querySelectorAll('.work:not(.series-ep)').forEach(w => {
-      w.style.display = (w.dataset.cat === cat) ? '' : 'none';
-    });
-  }));
-
-  // Inisialisasi filter
-  document.querySelectorAll('.work:not(.series-ep)').forEach(w => {
-    w.style.display = (w.dataset.cat === 'short-film') ? '' : 'none';
-  });
-
-  // ============================================================
-  // TOGGLE ACCORDION SERIES
-  // ============================================================
-  function toggleSeries(el) {
-    const item = el.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.series-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // ============================================================
-  // INIT — ambil data dan render semua section
+  // INIT
   // ============================================================
   fetchSheet().then(data => {
-    if (!data) return; // Gagal fetch — konten statis tetap tampil
+    if (!data) return;
     renderWorks(data);
     renderAchievements(data);
     renderPartners(data);
