@@ -53,12 +53,12 @@
   }
   ::selection{background:var(--accent);color:#fff}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px}
   .mono{font-family:var(--mono)}
 
   /* NAV */
   nav{position:sticky;top:0;z-index:100;background:rgba(10,18,40,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;max-width:1180px;margin:0 auto}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;max-width:900px;margin:0 auto}
   .logo{font-weight:900;font-size:20px;letter-spacing:.06em;line-height:.95}
   .logo span{display:block;font-size:11px;font-weight:600;letter-spacing:.35em;color:var(--muted)}
   .nav-links{display:flex;gap:42px;font-family:var(--mono);font-size:13px;letter-spacing:.12em}
@@ -81,7 +81,7 @@
     display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;
     background:transparent;
   }
-  .hero-overlay{position:relative;z-index:2;width:100%;padding:0 32px 6vh;max-width:1180px;margin:0 auto}
+  .hero-overlay{position:relative;z-index:2;width:100%;padding:0 32px 6vh;max-width:900px;margin:0 auto}
   .hero{padding:0}
   .hero-grid{display:flex;flex-direction:column;align-items:center;text-align:center}
   .hero h1{font-weight:900;font-size:clamp(3rem,8.5vw,6.5rem);line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
@@ -262,13 +262,12 @@
 
   /* ── ACHIEVEMENTS tabel ── */
   .ach-list{width:100%;border:1px solid var(--line);border-bottom:none}
-  .ach-row{display:grid;grid-template-columns:80px 1fr 2fr;align-items:center;
-    padding:16px 24px;border-bottom:1px solid var(--line);text-align:left;
-    transition:background .2s}
+  .ach-row{display:block;padding:14px 24px;border-bottom:1px solid var(--line);
+    text-align:left;transition:background .2s;font-size:13px;color:var(--muted);font-weight:400}
   .ach-row:hover{background:rgba(59,111,255,.06)}
-  .ach-row .ach-yr{font-family:var(--mono);font-size:12px;color:var(--dim)}
-  .ach-row .ach-rank{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--white);letter-spacing:.05em}
-  .ach-row .ach-desc{font-size:13px;color:var(--muted)}
+  .ach-row .ach-yr{font-weight:400;color:var(--dim)}
+  .ach-row .ach-rank{font-weight:400;color:var(--muted)}
+  .ach-row .ach-desc{font-weight:400;color:var(--muted)}
   #achievements .sec-head{text-align:center}
 
   /* ── CREATIVE PARTNER 3 kolom statis ── */
@@ -344,10 +343,10 @@
     <div class="sec-head"><h2 class="sec-title">Achievements</h2></div>
     <div class="ach-list">
       <!-- Diisi oleh JavaScript dari Google Sheets -->
-      <div class="ach-row"><span class="ach-yr">2024</span><span class="ach-rank">TITLE</span><span class="ach-desc">Description</span></div>
-      <div class="ach-row"><span class="ach-yr">2024</span><span class="ach-rank">TITLE</span><span class="ach-desc">Description</span></div>
-      <div class="ach-row"><span class="ach-yr">2024</span><span class="ach-rank">TITLE</span><span class="ach-desc">Description</span></div>
-      <div class="ach-row"><span class="ach-yr">2024</span><span class="ach-rank">TITLE</span><span class="ach-desc">Description</span></div>
+      <div class="ach-row">2024 | TITLE | Description</div>
+      <div class="ach-row">2024 | TITLE | Description</div>
+      <div class="ach-row">2024 | TITLE | Description</div>
+      <div class="ach-row">2024 | TITLE | Description</div>
     </div>
   </div>
 </section>
@@ -527,11 +526,7 @@
     const list = document.querySelector('.ach-list');
     if (!list || achData.length === 0) return;
     list.innerHTML = achData.map(r => `
-      <div class="ach-row">
-        <span class="ach-yr">${r.tahun || ''}</span>
-        <span class="ach-rank">${r.judul || 'TITLE'}</span>
-        <span class="ach-desc">${r.deskripsi || 'Description'}</span>
-      </div>`).join('\n');
+      <div class="ach-row">${[r.tahun, r.judul, r.deskripsi].filter(Boolean).join(' | ')}</div>`).join('\n');
   }
 
   // ============================================================
